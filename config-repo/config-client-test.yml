@@ -1,2 +1,18 @@
+spring:
+  application:
+    name: spring-config-client
+server:
+  port: 13000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/ # 指定 Eureka 注册中心的地址
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+        
 info:
   profile: test
