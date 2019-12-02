@@ -1,17 +1,15 @@
 spring:
   application:
-    name: spring-config-server
-  cloud:
-    config:
-      server:
-        git: #https://github.com/dengwen999/spring-cloud.git
-          uri: https://github.com/dengwen999/spring-cloud.git # 配置git仓库的地址 
-          search-paths: config-repo # git仓库地址下的相对地址，可以配置多个，用,分割。
+    name: spring-config-client
 server:
-  port: 12000
-
-
+  port: 13000
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8100/eureka/ # 指定 Eureka 注册中心的地址
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
